@@ -68,15 +68,24 @@
                 <div class="invalid-feedback">{{ $message }}</div>
               @enderror
             </div>
-
             <div class="form-group">
-              <label for="satuan">Satuan</label>
-              <input type="text" name="satuan" id="satuan" class="form-control @error('satuan') is-invalid @enderror" value="{{ old('satuan', 'pcs') }}">
-              @error('satuan')
-                <div class="invalid-feedback">{{ $message }}</div>
-              @enderror
+                <label for="kategori" class="form-label">Kategori <span class="text-danger">*</span></label>
+                <select class="form-select @error('kategori') is-invalid @enderror" id="kategori" name="kategori" required>
+                    <option value="">Pilih Kategori</option>
+                    <option value="elektronik" {{ old('kategori') == 'elektronik' ? 'selected' : '' }}>Elektronik</option>
+                    <option value="pakaian" {{ old('kategori') == 'pakaian' ? 'selected' : '' }}>Pakaian</option>
+                    <option value="makanan" {{ old('kategori') == 'makanan' ? 'selected' : '' }}>Makanan</option>
+                    <option value="minuman" {{ old('kategori') == 'minuman' ? 'selected' : '' }}>Minuman</option>
+                    <option value="peralatan_rumah" {{ old('kategori') == 'peralatan_rumah' ? 'selected' : '' }}>Peralatan Rumah</option>
+                    <option value="kecantikan" {{ old('kategori') == 'kecantikan' ? 'selected' : '' }}>Kecantikan</option>
+                    <option value="olahraga" {{ old('kategori') == 'olahraga' ? 'selected' : '' }}>Olahraga</option>
+                    <option value="buku" {{ old('kategori') == 'buku' ? 'selected' : '' }}>Buku</option>
+                    <option value="mainan" {{ old('kategori') == 'mainan' ? 'selected' : '' }}>Mainan</option>
+                </select>
+                @error('kategori')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
-
             <div class="form-group">
               <label for="keterangan">Keterangan</label>
               <textarea name="keterangan" id="keterangan" class="form-control @error('keterangan') is-invalid @enderror" rows="3">{{ old('keterangan') }}</textarea>

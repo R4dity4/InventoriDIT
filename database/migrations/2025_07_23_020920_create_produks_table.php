@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('nama');
             $table->string('keterangan');
             $table->integer('stok')->default(0);
-            $table->decimal('harga', 10.2);
+            $table->decimal('harga', 10, 2);
             $table->timestamps();
         });
-        
+
     }
 
     /**

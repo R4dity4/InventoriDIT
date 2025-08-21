@@ -15,7 +15,17 @@ return new class extends Migration
             $table->id();
             $table->foreignId('produk_id')->constrained('produks')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('jumlah')->default(0);
-            $table->string('satuan', 100);
+            $table->enum('kategori', [
+                'elektronik',
+                'pakaian',
+                'makanan',
+                'minuman',
+                'peralatan_rumah',
+                'kecantikan',
+                'olahraga',
+                'buku',
+                'mainan'
+            ]);
             $table->string('keterangan', 100)->nullable();
             $table->date('tgl_masuk')->default(now());
             $table->timestamps();

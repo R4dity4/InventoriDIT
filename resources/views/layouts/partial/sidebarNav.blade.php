@@ -2,12 +2,12 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="index.html">
+                {{-- <div class="sb-sidenav-menu-heading">Core</div>
+                <a class="nav-link" href="{{ route('welcome') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <div class="sb-sidenav-menu-heading">Interface</div>
+                <div class="sb-sidenav-menu-heading">Interface</div> --}}
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#produk" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Produk
@@ -30,18 +30,18 @@
                         <a class="nav-link" href="{{ route( 'stokins.create') }}">Tambah Stok Masuk</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#stokout" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#stokouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Stok Keluar
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="stokout" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <div class="collapse" id="stokouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route( 'stokout.index') }}">Data Stok Keluar</a>
-                        <a class="nav-link" href="{{ route( 'stokout.create') }}">Tambah Stok Keluar</a>
+                        <a class="nav-link" href="{{ route( 'stokouts.index') }}">Data Stok Keluar</a>
+                        <a class="nav-link" href="{{ route( 'stokouts.create') }}">Tambah Stok Keluar</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages" style="hover{color:red}">
+                {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages" style="hover{color:red}">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Pages
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -71,7 +71,7 @@
                             </nav>
                         </div>
                     </nav>
-                </div>
+                </div> --}}
                 <!-- <div class="sb-sidenav-menu-heading">Addons</div>
                 <a class="nav-link" href="{{ route('produk.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -84,8 +84,8 @@
             </div>
         </div>
         <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            <div class="text-warning">Raditya Muhammad Hisyam</div>
-            </div>
+            <div class="small">Logged in as: {{ Auth::user()->name }}</div>
+            <div class="text-warning">{{ Auth::user()->email }}</div>
+        </div>
     </nav>
 </div>

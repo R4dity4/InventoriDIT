@@ -66,7 +66,7 @@ class StokoutController extends Controller
             'stok' => $produk->stok - $request->jumlah
         ]);
 
-        return redirect()->route('stokout.index')
+    return redirect()->route('stokouts.index')
             ->with('success', 'Stok keluar berhasil ditambahkan.');
     }
 
@@ -158,7 +158,7 @@ class StokoutController extends Controller
             'keterangan' => $request->keterangan,
         ]);
 
-        return redirect()->route('stokout.index')
+    return redirect()->route('stokouts.index')
             ->with('success', 'Data stok keluar berhasil diperbarui.');
     }
 
@@ -179,7 +179,7 @@ class StokoutController extends Controller
             'stok' => $produk->stok + $jumlah
         ]);
 
-        return redirect()->route('stokout.index')
+    return redirect()->route('stokouts.index')
             ->with('success', 'Data stok keluar berhasil dihapus dan stok produk dikembalikan.');
     }
 }

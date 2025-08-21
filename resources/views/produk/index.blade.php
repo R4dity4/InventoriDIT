@@ -22,7 +22,7 @@
           @endif
 
           <table class="table table-bordered table-striped table-hover">
-            <thead class="table-success">
+            <thead class="table-warning">
               <tr>
                 <th>ID</th>
                 <th>Nama</th>

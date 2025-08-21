@@ -8,7 +8,7 @@
         <div class="card-header">
           <h3 class="card-title">Data Stok Masuk</h3>
           <div class="card-tools">
-            <a href="{{ route('stokin.create') }}" class="btn btn-primary btn-sm">
+            <a href="{{ route('stokins.create') }}" class="btn btn-primary btn-sm">
               <i class="fas fa-plus"></i> Tambah Stok Masuk
             </a>
           </div>

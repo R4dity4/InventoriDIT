@@ -14,13 +14,13 @@ class StokinController extends Controller
     public function index()
     {
         $stokins = Stokin::with('produk')->latest()->paginate(10);
-        return view('stokins.index', compact('stokins'));
+        return view('stokin.index', compact('stokins'));
     }
 
     public function create()
     {
         $produks = Produk::all();
-        return view('stokins.create', compact('produks'));
+        return view('stokin.create', compact('produks'));
     }
 
     public function store(Request $request)
@@ -56,13 +56,13 @@ class StokinController extends Controller
     public function show(Stokin $stokin)
     {
         $stokin->load('produk');
-        return view('stokins.show', compact('stokin'));
+        return view('stokin.show', compact('stokin'));
     }
 
     public function edit(Stokin $stokin)
     {
         $produks = Produk::all();
-        return view('stokins.edit', compact('stokin', 'produks'));
+        return view('stokin.edit', compact('stokin', 'produks'));
     }
 
     public function update(Request $request, Stokin $stokin)
@@ -120,7 +120,7 @@ class StokinController extends Controller
         // Notification::route('mail', config('mail.from.address'))
         //     ->notify(new StokInNotification($stokin, $produk, 'update'));
 
-        return redirect()->route('stokins.index')
+        return redirect()->route('stokin.index')
             ->with('success', 'Data stok masuk berhasil diperbarui.');
     }
 
@@ -145,7 +145,7 @@ class StokinController extends Controller
         // Notification::route('mail', config('mail.from.address'))
         //     ->notify(new StokInNotification($stokin, $produk, 'delete'));
 
-        return redirect()->route('stokins.index')
+        return redirect()->route('stokin.index')
             ->with('success', 'Data stok masuk berhasil dihapus.');
     }
 }
